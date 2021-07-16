@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+:root {
+    --primary-bg: hsl(233, 47%, 7%);
+    --primary-card-bg: hsl(244, 38%, 16%);
+    --primary-accent: hsl(277, 64%, 61%);
+    --heading: hsl(0, 0%, 100%);
+    --paragraph: hsla(0, 0%, 100%, 0.75);
+    --sub-heading: hsla(0, 0%, 100%, 0.6);
+}
+
+html, body { margin: 0; padding: 0; width: 100%; height: 100%; font-size: 10px; }
+
+body { 
+    background-color: var(--primary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--paragraph);
+}
+
+.accent { color: var(--primary-accent); }
+
+.card {
+    display: grid;
+    width: 1110px;
+    height: 446px;
+    overflow: hidden;
+    grid-template-areas: 'left right';
+    grid-template-columns: auto 540px;
+    grid-template-rows: 100%;
+    background-color: var(--primary-card-bg);
+    border-radius: 1em;
+    margin: 3rem;
+}
+
+.card header {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    grid-area: right;
+    background-color: var(--primary-accent);
+}
+
+.card header img {
+    height: 100%;
+    width: 100%;
+    mix-blend-mode: multiply;
+    opacity: 0.75;
+}
+
+.card h1.heading,
+.card .stat .figure {
+    color: var(--heading);
+}
+
+.card h1 {
+    font-size: 3.544rem;
+    line-height: 4.4rem;
+	font-family: 'Inter', sans-serif;
+    letter-spacing: 0.02rem;
+    margin: 0;
+    margin-top: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.card .copy {
+    grid-area: left;
+    padding: 6.5rem 6.5rem 6rem 7.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .copy .grow { letter-spacing: 1px; }
+
+.card .copy p {
+    font-size: 1.5rem;
+    font-weight: 300;
+	font-family: 'Inter', sans-serif;
+    line-height: 2.5rem;
+    letter-spacing: 0.0028px;
+    flex-grow: 2;
+    padding-right: 5rem;
+    letter-spacing: 0.01rem;
+}
+
+.card footer {
+    display: flex;
+    padding-bottom: 0.5rem;
+    padding-right: 0.7rem;
+}
+
+.card .stat {
+    flex: 1;
+}
+
+.card .stat:nth-of-type(2) { padding-left: 0.5rem; }
+
+.card .stat .figure {
+    display: block;
+    font-size: 2.4rem;
+    margin-bottom: 0.6rem;
+    font-weight: bold;
+	font-family: 'Inter', sans-serif;
+}
+
+.card .stat .unit { 
+    color: var(--sub-heading);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+	font-family: 'Lexend Deca', sans-serif;
+    letter-spacing: 0.01rem;
+}
+
+@media screen and (max-width: 1100px) {
+    .card { grid-template-columns: auto 440px; height: 400px; }
+    .card h1 { font-size: 3rem; } 
+    .card .copy p { padding-right: 0; }
+    .card .copy { padding: 6rem 6em 5.5rem 6.7rem; }
+    .card .stat:nth-of-type(2) { padding-left: 0rem; }
+}
+
+@media screen and (max-width: 1024px) {
+    .card h1 { font-size: 2.5rem; line-height: 3rem; margin-bottom: 0.5rem; } 
+    .card .copy { padding: 5rem 5em 4.5rem 5.7rem; }
+    .card .copy p { padding-right: 0; }
+    .card .stat .figure { font-size: 1.8rem; }
+    .card .stat .unit {  font-size: 1rem; }
+}
+
+@media screen and (max-width: 900px) {
+    .card { grid-template-columns: auto 340px; height: 350px;}
+    .card h1 { font-size: 2.3rem; line-height: 2.7rem; } 
+    .card .stat .figure { font-size: 1.6rem; }
+}
+
+
+@media screen and (max-width: 800px) {
+    .card { grid-template-columns: auto 290px; height: 350px;}
+}
+
+@media screen and (max-width: 720px) {
+    body { flex-direction: row; align-items: flex-start; }
+    .card .copy { padding: 3rem; }
+    .card {
+        overflow: visible;
+        grid-template-areas: 'top' 'bottom';
+        grid-template-columns: 100%;
+        text-align: center;
+        display: block;
+        height: auto;
+        margin: 2.4rem;
+    }
+
+    .card header {
+        grid-area: top;
+        border-radius: 1em 1em 0 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card h1 {
+        font-size: 2.74rem;
+        line-height: 3.2rem;
+        margin-bottom: 0.35rem;
+        margin-top: 0.95rem;
+    }
+
+    .card .copy { grid-area: bottom; }
+    .card .stat .figure { font-size: 2.4rem; }
+    .card .stat .unit { font-size: 1.3rem; }
+
+    .card .copy p {
+        font-size: 1.5rem;
+        margin-bottom: 3.8rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .card footer { flex-direction: column; }
+    .card .stat { display: block; margin-bottom: 3rem; }
+}
+
+@media screen and (max-width: 185px) {
+    .card header {
+        flex-direction: column;
+    }
+}
