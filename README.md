@@ -8,3 +8,4 @@ Each challenge that I attempt has been filed under its own folder.
 Here is a list of challenges that I have completed so far!
 - [Stats preview card component](https://dennisang.github.io/frontendmentor/stats-preview-card-component/)
 - [3-column preview card component](https://dennisang.github.io/frontendmentor/3-column-preview-card-component/)
+- [Profile card component](https://dennisang.github.io/frontendmentor/profile-card-component/)
